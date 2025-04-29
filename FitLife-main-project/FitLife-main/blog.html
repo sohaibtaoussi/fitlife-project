@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitLife - Blog</title>
+    <link rel="stylesheet" href="blog.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">FitLife</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="shop.php">Shop</a>
+            <a href="blog.html">Blog</a>
+            <a href="login.php" id="login-btn">Login</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-experts-section">
+        <div class="hero-section-wrapper">
+            <div class="hero-content">
+                <h1>Welcome to the FitLife Blog</h1>
+                <p>Your ultimate destination for fitness tips, expert advice, and healthy living.</p>
+                <a href="#expert-articles" class="cta-btn">Explore Articles</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expert Articles -->
+    <section class="expert-articles" id="expert-articles">
+        <div class="experts-content">
+            <div class="articles-container">
+                <div class="article-card">
+                    <img src="tmvmnt-media-rm7rZYdl3rY-unsplash.jpg" alt="Expert 1">
+                    <div class="article-content">
+                        <h3>KARIM Sara</h3>
+                        <p class="expert-title">Nutrition Specialist</p>
+                        <p class="advice">"A balanced diet rich in fruits, vegetables, and whole grains is key to maintaining energy levels and overall health."</p>
+                        <button class="read-more" onclick="openModal('TAZI Fouad - Fitness Coach', 'Full article content for TAZI Fouad goes here...')">Read More</button>
+                    </div>
+                </div>
+                <div class="article-card">
+                    <img src="43555.jpg" alt="Expert 2">
+                    <div class="article-content">
+                        <h3>TAZI Fouad</h3>
+                        <p class="expert-title">Fitness Coach</p>
+                        <p class="advice">"Success starts with self-discipline. it’s about being consistent. Remember, the pain of discipline is far less than the pain of regret"</p>
+                        <button class="read-more" onclick="openModal('TAZI Fouad - Fitness Coach', 'Full article content for TAZI Fouad goes here...')">Read More</button>
+                    </div>
+                </div>
+                <div class="article-card">
+                    <img src="usman-yousaf-pTrhfmj2jDA-unsplash.jpg" alt="Expert 3">
+                    <div class="article-content">
+                        <h3>DR. Youssef Othmane</h3>
+                        <p class="expert-title">Doctor</p>
+                        <p class="advice">"Regular exercise, even just 30 minutes a day, can significantly improve your physical and mental well-being."</p>
+                        <button class="read-more" onclick="openModal('TAZI Fouad - Fitness Coach', 'Full article content for TAZI Fouad goes here...')">Read More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expert Videos Section -->
+    <section class="expert-videos">
+        <h2>Expert Advice Videos</h2>
+        <div class="video-container">
+            <div class="video-card">
+                <iframe src="https://www.youtube.com/embed/videoID" title="Expert Video 1"></iframe>
+                <h3>Expert Video 1</h3>
+                <p>Watch the expert share tips on staying healthy and active.</p>
+            </div>
+            <div class="video-card">
+                <iframe src="https://www.youtube.com/embed/videoID" title="Expert Video 2"></iframe>
+                <h3>Expert Video 2</h3>
+                <p>Learn about the best diet practices for fitness enthusiasts.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comments Section -->
+    <section class="comments-section">
+        <h3>Share Your Thoughts</h3>
+        <p>We'd love to hear your opinions on the articles. Feel free to leave your feedback or ask questions!</p>
+        <form action="#" method="POST" class="comment-form">
+            <textarea name="comment" placeholder="Write your comment here..." required></textarea>
+            <button type="submit" class="submit-btn">Submit Comment</button>
+        </form>
+        <div class="comments-list">
+            <div class="comment">
+                <p class="user-name">John Doe</p>
+                <p class="comment-text">Great article! I totally agree with the point about consistency in fitness routines.</p>
+            </div>
+            <div class="comment">
+                <p class="user-name">Jane Smith</p>
+                <p class="comment-text">I found the tips on nutrition really useful. Looking forward to reading more!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guest Articles Section -->
+    <section class="guest-articles">
+        <h2>Guest Contributions</h2>
+        <p>Explore insightful articles written by guest experts in health, fitness, and wellness. Get a different perspective from various contributors.</p>
+        <div class="guest-article">
+            <h3>Guest Article: The Power of Sleep in Fitness Recovery</h3>
+            <p>In this guest article, fitness trainer Sarah discusses the essential role sleep plays in muscle recovery and overall fitness progress. Discover how a proper sleep schedule can enhance your workouts.</p>
+            <button class="read-more" onclick="openModal('TAZI Fouad - Fitness Coach', 'Full article content for TAZI Fouad goes here...')">Read More</button>
+        </div>
+        <div class="guest-article">
+            <h3>Guest Article: The Role of Mental Health in Fitness</h3>
+            <p>Health expert Mark shares his insights into how mental health impacts physical fitness. Learn about mindfulness techniques and stress management strategies to improve your fitness journey.</p>
+            <button class="read-more" onclick="openModal('TAZI Fouad - Fitness Coach', 'Full article content for TAZI Fouad goes here...')">Read More</button>
+        </div>
+    </section>
+
+    <!-- Modal Structure -->
+    <div id="articleModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modalTitle">Article Title</h2>
+            <p id="modalContent">Full article content will appear here.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 FitLife. All Rights Reserved.</p>
+    </footer>
+    <script src="script.js" defer></script>
+</body>
+
+</html>

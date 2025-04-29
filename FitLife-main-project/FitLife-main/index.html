@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitLife</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <script src="script.js" defer></script>
+    <header>
+        <div class="logo">FitLife</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="shop.php">Shop</a>
+            <a href="blog.html">Blog</a>
+            <a href="login.php" id="login-btn">Login</a>
+        </nav>
+        <button class="toggle-btn" onclick="toggleSidebar()" aria-controls="sidebar" aria-expanded="false">☰ Categories</button>
+        <section class="sidebar" id="sidebar" aria-hidden="true">
+            <div class="sidebar-content">
+                <h3>Sports</h3>
+                <ul>
+                    <li><input type="checkbox" id="running" name="sport" value="Running" onchange="updateSelections()"> <label for="running">Running</label></li>
+                    <li><input type="checkbox" id="gym" name="sport" value="Gym" onchange="updateSelections()"> <label for="gym">Gym</label></li>
+                    <li><input type="checkbox" id="football" name="sport" value="Football" onchange="updateSelections()"> <label for="football">Football</label></li>
+                    <li><input type="checkbox" id="biking" name="sport" value="Biking" onchange="updateSelections()"> <label for="biking">Biking</label></li>
+                    <li><input type="checkbox" id="basketball" name="sport" value="Basketball" onchange="updateSelections()"> <label for="basketball">Basketball</label></li>
+                </ul>
+                <h3>Brands</h3>
+                <ul>
+                    <li><input type="checkbox" id="adidas" name="brand" value="Adidas" onchange="updateSelections()"> <label for="adidas">Adidas</label></li>
+                    <li><input type="checkbox" id="nike" name="brand" value="Nike" onchange="updateSelections()"> <label for="nike">Nike</label></li>
+                    <li><input type="checkbox" id="under-armour" name="brand" value="Under Armour" onchange="updateSelections()"> <label for="under-armour">Under Armour</label></li>
+                    <li><input type="checkbox" id="scrapper" name="brand" value="Scrapper" onchange="updateSelections()"> <label for="scrapper">Scrapper</label></li>
+                    <li><input type="checkbox" id="puma" name="brand" value="Puma" onchange="updateSelections()"> <label for="puma">Puma</label></li>
+                </ul>
+            </div>
+        </section>
+        <div class="sidebar-overlay"></div>
+    </header>
+    <section class="banner">
+        <h1>Super Value Deals</h1>
+        <p>On all products</p>
+        <p>Save more with coupons & up to 70% off!</p>
+        <button onclick="window.location.href='shop.php'">Shop Now</button>
+    </section>
+
+    <section id="product1" class="section-p1">
+        <div class="gradient-header">
+            <h2>Featured Products</h2>
+            <p>Check out some of our favorite products</p>
+        </div>
+        <div class="pro-container">
+        <div class="pro" data-sport="Running" data-brand="Nike" data-name="Women's Road Running Shoes - Nike Invincible 3"
+        data-price="399.00" 
+        data-image="running shoes.jpeg"
+        onclick="redirectToProduct(this)">
+            <img src="running shoes.jpeg" alt="Running Shoes">
+            <div class="des">
+                <span>NIKE</span>
+                <h5>Women's Road Running Shoes - Nike Invincible 3</h5>
+                <h4>399,00 MAD</h4>
+            </div>
+            <button class="add-to-cart">Add</button>   
+        </div>
+        <div class="pro" data-sport="Gym" data-brand="Nike" data-name="Tritan Twist Bottle (32 oz) - Nike ACG"
+        data-price="59.00" 
+        data-image="bottle.png"
+        onclick="redirectToProduct(this)">
+            <img src="bottle.png" alt="Water Bottle">
+            <div class="des">
+                <span>NIKE AGC</span>
+                <h5>Tritan Twist Bottle (32 oz) - Nike ACG</h5>
+                <h4>59,00 MAD</h4>
+            </div>
+            <button class="add-to-cart">Add</button>   
+        </div>
+        <div class="pro" data-sport="Running" data-brand="Nike" data-name="Men's Dri-FIT UV Full-Zip Performance Hoodie - Nike Primary Fleece"
+        data-price="320.00" 
+        data-image="men's hoodie.png"
+        onclick="redirectToProduct(this)">
+            <img src="men's hoodie.png" alt="Men's Hoodie">
+            <div class="des">
+                <span>NIKE</span>
+                <h5>Men's Dri-FIT UV Full-Zip Performance Hoodie - Nike Primary Fleece</h5>
+                <h4>320,00 MAD</h4>
+            </div>
+            <button class="add-to-cart">Add</button>   
+        </div>
+        <div class="pro" data-sport="Gym" data-brand="Nike" data-name="Men's Dri-FIT 7 2-in-1 Versatile Shorts - Nike Unlimited"
+        data-price="250.00" 
+        data-image="shorts.png"
+        onclick="redirectToProduct(this)">
+            <img src="shorts.png" alt="Men's Shorts">
+            <div class="des">
+                <span>NIKE</span>
+                <h5>Men's Dri-FIT 7" 2-in-1 Versatile Shorts - Nike Unlimited</h5>
+                <h4>250,00 MAD</h4>
+            </div>
+            <button class="add-to-cart">Add</button>   
+            </div>
+        </div>
+    </section>
+
+    <section id="new-arrivals" class="section-p1">
+        <div class="gradient-header">
+            <h2>New Arrivals</h2>
+            <p>Check out our latest products</p>
+        </div>
+        <div class="product-container">
+            <div class="product-container">
+                <div class="product" data-sport="Football" data-brand="Puma" data-name="PUMA SPORTS HOME KIT JERSEY MOROCCO Men, 2025"
+                data-price="205.00" 
+                data-image="maillot-maroc.jpg"
+                onclick="redirectToProduct(this)">
+                    <img src="maillot-maroc.jpg" alt="New Product 1">
+                    <div class="description">
+                        <span>PUMA SPORT</span>
+                        <h5>PUMA SPORTS HOME KIT JERSEY MOROCCO Men, 2025</h5>
+                        <h4>205,00 MAD</h4>
+                    </div>
+                    <button class="add-to-cart">Add</button>
+                </div>
+                <div class="product" data-sport="Biking" data-brand="Scrapper" data-name="SCRAPPER SPORT junior cycling GLOVES, 2025" 
+                data-price="199.00" 
+                data-image="gants-velo-junior-scrapper-sport.jpg"
+                onclick="redirectToProduct(this)">
+                    <img src="gants-velo-junior-scrapper-sport.jpg" alt="New Product 2">
+                    <div class="description">
+                        <span>SCRAPPER</span>
+                        <h5>SCRAPPER SPORT junior cycling GLOVES, 2025</h5>
+                        <h4>199,00 MAD</h4>
+                    </div>
+                    <button class="add-to-cart">Add</button>
+                </div>
+                <div class="product" data-sport="Running" data-brand="Under Armour" data-name="CHAUSSURES HOMME UA HOVR HAVOC 3 ORANGE, 2025" 
+                data-price="700.00" 
+                data-image="underarmour shoes.jpg"
+                onclick="redirectToProduct(this)">
+                    <img src="underarmour shoes.jpg" alt="New Product 3">
+                    <div class="description">
+                        <span>UNDER ARMOUR</span>
+                        <h5>CHAUSSURES HOMME UA HOVR HAVOC 3 ORANGE, 2025</h5>
+                        <h4>700,00 MAD</h4>
+                    </div>
+                    <button class="add-to-cart">Add</button>
+                </div>
+    </div>
+    </section>
+
+    <section class="inspirational-quote">
+        <h3>Find Your Perfect Match Below!</h3>
+    </section>
+
+    <section id="sm-banner" class="section-p1">
+        <div class="banner-box2">
+            <h2>Get Fit with FitLife</h2>
+            <span>Get the best deals on Gym Equipements</span>
+            <button>Learn More</button>
+        </div>
+        <div class="banner-box1">
+            <h2>RUN Faster, Smarter with FitLife</h2>
+            <span>gear up with unbeatable deals on top-notch running equipment today!</span>
+            <button>Learn More</button>
+        </div>
+    </section>
+
+    <section class="experts-section">
+        <div class="gradient-header">
+            <h2>Expert Health Advice</h2>
+            <p>Discover what our experts have to say about staying healthy</p>
+        </div>
+        <div class="articles-container">
+            <div class="article-card">
+                <img src="tmvmnt-media-rm7rZYdl3rY-unsplash.jpg" alt="Expert 1">
+                <div class="article-content">
+                    <h3>Dr. KARIM Sara</h3>
+                    <p class="expert-title">Nutrition Specialist</p>
+                    <p class="advice">"A balanced diet rich in fruits, vegetables, and whole grains is key to maintaining energy levels and overall health."</p>
+                    <a href="blog.html" class="read-more">Read More</a>
+                </div>
+            </div>
+            <div class="article-card">
+                <img src="43555.jpg" alt="Expert 2">
+                <div class="article-content">
+                    <h3>TAZI Fouad</h3>
+                    <p class="expert-title">Fitness Coach</p>
+                    <p class="advice">"Regular exercise, even just 30 minutes a day, can significantly improve your physical and mental well-being."</p>
+                    <a href="blog.html" class="read-more">Read More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <section id="brands-banner">
+        <div class="container">
+            <h2>Our Brands</h2>
+            <div class="brands">
+                <div class="brand">
+                    <img src="nikepng.jpg" alt="Brand 1">
+                </div>
+                <div class="brand">
+                    <img src="pumaPNG.png" alt="Brand 2">
+                </div>
+                <div class="brand">
+                    <img src="scrapperPNG.png" alt="Brand 3">
+                </div>
+                <div class="brand">
+                    <img src="adidasPNG.png" alt="Brand 4">
+                </div>
+                <div class="brand">
+                    <img src="underarmourPNG.jpg" alt="Brand 5">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="newsletter">
+        <div class="container">
+            <div class="logo">
+                <h2>FITLIFE</h2>
+            </div>
+            <div class="newsletter-content">
+                <h3>Subscribe to our Newsletter</h3>
+                <p>Get the latest news and <span>special offers</span></p>
+            </div>
+            <form>
+                <input type="email" placeholder="Enter your email">
+                <button>Subscribe</button>
+            </form>
+        </div>
+        <div class="footer-links">
+            <div class="social-media">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+            <div class="separator"></div>
+            <div class="contact-info">
+                <h3>Contact Us</h3>
+                <p>Email: info-fitlife@gmail.com<br>Phone: +212 600 123 456</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="features">
+            <div class="shipping-payment">
+                <img src="male_and_female_hands_holding_credit_card.jpg">
+                <h4>Cash on Delivery</h4>
+                <p>Pay when you receive your order.</p>
+            </div>
+            <div class="payment-card">
+                <img src="visa-logo.png">
+                <h4>Secure Payment by Credit Card</h4>
+                <p>Secure transactions</p>
+            </div>
+            <div class="fast-shipping">
+                <img src="ctm.png">
+                <h4>Delivery Across Morocco</h4>
+                <p>Fast and reliable delivery nationwide.</p>
+            </div>
+            <div class="original-items">
+                <img src="freepik__upload__6106.jpg">
+                <h4>Original Products</h4>
+                <p>Guaranteed 100% authentic products.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 FitLife. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
